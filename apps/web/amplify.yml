@@ -1,0 +1,22 @@
+version: 1
+applications:
+  - frontend:
+      phases:
+        preBuild:
+          commands:
+            - cd ../..
+            - npm install
+        build:
+          commands:
+            - npx turbo run build
+            - ls
+            - cd apps/web
+      artifacts:
+        baseDirectory: .next
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - ../node_modules/.cache/turbo
+          - node_modules/**/*
+    appRoot: apps/web
