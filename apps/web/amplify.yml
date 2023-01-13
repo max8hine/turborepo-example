@@ -26,23 +26,12 @@ applications:
           commands:
             - echo FRONTEND PREBUILD
             - cd ../../
-            # We don't need to move folders, we already moved out to the root at the backend build step.
-            - nvm install 16.15.1
-            - nvm use 16.15.1
-            - node -v
-            - export NODE_OPTIONS=--max-old-space-size=8192
             - npm ci
         build:
           commands:
             - echo FRONTEND BUILD
-            # - aws s3 cp amplify.yml s3://fox-sandbox/public/
-            # - yarn amplify:clean:current-backend
             - npm run build
             - cd apps/web
-            # This step is for some custom serverless config options.
-            # Modifying the headers from serverless works.
-            - cp serverless/serverless.yml serverless.yml
-            # - aws s3 cp serverless.yml s3://fox-sandbox/public/
         postBuild:
           commands:
             - ls
