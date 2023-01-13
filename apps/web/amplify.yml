@@ -1,11 +1,12 @@
 version: 1
 applications:
-  - frontend:
+  - appRoot: apps/web
+    frontend:
       phases:
         preBuild:
           commands:
             - cd ../..
-            - npm install
+            - npm ci
         build:
           commands:
             - npx turbo run build
@@ -19,4 +20,3 @@ applications:
         paths:
           - ../node_modules/.cache/turbo
           - node_modules/**/*
-    appRoot: apps/web
