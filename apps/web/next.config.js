@@ -7,4 +7,7 @@ module.exports = {
   experimental: {
     outputFileTracingRoot: path.join(__dirname, "../../"),
   },
+  env: {
+    USER: process.env.USER,
+  },
 };
