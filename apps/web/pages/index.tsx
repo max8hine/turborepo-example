@@ -5,7 +5,7 @@ export default function Web(props: { site: string; user: string }) {
   return (
     <div>
       <h1>
-        {props.site} | {props.user}
+        {props.site} | {props.user} | {process.env.NEXT_PUBLIC_ANALYTICS_ID}
       </h1>
       <Button />
     </div>

@@ -5,6 +5,9 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**"]
     },
+    "build:web": {
+      "dependsOn": ["$USER", "$NEXT_PUBLIC_ANALYTICS_ID"]
+    },
     "lint": {
       "outputs": []
     },
@@ -12,5 +15,5 @@
       "cache": false
     }
   },
-  "globalEnv": ["USER"]
+  "globalDependencies": [".env", "tsconfig.json"]
 }
