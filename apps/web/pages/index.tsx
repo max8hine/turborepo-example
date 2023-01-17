@@ -1,6 +1,7 @@
 import { Button } from "ui";
 
 export default function Web(props: { site: string; user: string }) {
+  console.log(props, "props");
   return (
     <div>
       <h1>
