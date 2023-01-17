@@ -2,11 +2,20 @@
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
     "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**"]
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "dist/**",
+        ".next/**"
+      ]
     },
     "build:web": {
-      "dependsOn": ["$USER", "$NEXT_PUBLIC_ANALYTICS_ID"]
+      "dependsOn": [],
+      "env": [
+        "USER",
+        "NEXT_PUBLIC_ANALYTICS_ID"
+      ]
     },
     "lint": {
       "outputs": []
@@ -15,5 +24,8 @@
       "cache": false
     }
   },
-  "globalDependencies": [".env", "tsconfig.json"]
+  "globalDependencies": [
+    ".env",
+    "tsconfig.json"
+  ]
 }
