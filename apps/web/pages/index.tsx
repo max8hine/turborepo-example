@@ -1,10 +1,11 @@
 import { Button } from "ui";
+import HeroSection from "@components/sections/hero";
 
 export default function Web(props: { site: string; user: string }) {
-  console.log(props, "props");
   return (
     <div>
-      <h1>
+      <HeroSection />
+      <h1 className="text-blue-500">
         {props.site} | {props.user} | {process.env.NEXT_PUBLIC_ANALYTICS_ID}
       </h1>
       <Button />
