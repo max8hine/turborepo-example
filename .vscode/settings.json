@@ -1,4 +1,22 @@
 {
+  "css.customData": [".vscode/css_custom_data.json"],
+  "css.validate": false,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "files.associations": {
+    "*.svg": "html",
+    "*.xml": "html",
+    "*.md": "mdx"
+  },
+  "[mdx]": {
+    "editor.formatOnSave": true
+  },
+  "[md]": {
+    "editor.formatOnSave": true
+  },
   "cSpell.words": [
     "nextjs"
   ]
